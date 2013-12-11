@@ -28,8 +28,15 @@
 
 - (void)drawRect:(CGRect)rect
 {
-    CGRect circleRect = CGRectInset(rect, 5, 5);
+    if (self.highlighted) {
+        _fillColor = [UIColor whiteColor];
+        _marginColor = [UIColor purpleColor];
+    } else {
+        _fillColor = [UIColor greenColor];
+        _marginColor = [UIColor purpleColor];
+    }
     
+    CGRect circleRect = CGRectInset(rect, 5, 5);
     UIBezierPath *circlePath = [UIBezierPath bezierPathWithOvalInRect:circleRect];
     circlePath.lineWidth = 8.0;
     [self.marginColor setStroke];
