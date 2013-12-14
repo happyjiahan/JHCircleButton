@@ -23,6 +23,9 @@
 - (void)viewDidLoad
 {
     [super viewDidLoad];
+    UIImageView *bgView = [[UIImageView alloc] initWithFrame:self.view.bounds];
+    bgView.image = [UIImage imageNamed:@"skin_colorful"];
+    [self.view addSubview:bgView];
     
     [self addNumberLabel];
     [self addCircleButton];
@@ -41,7 +44,6 @@
     float height = 300;
     _numberLabel = [[UILabel alloc] initWithFrame:CGRectMake(0, 0, width, height)];
     _numberLabel.textAlignment = NSTextAlignmentCenter;
-    _numberLabel.backgroundColor = [UIColor yellowColor];
     _numberLabel.textColor = [UIColor redColor];
     _numberLabel.font = [UIFont boldSystemFontOfSize:150];
     [self setNumber];

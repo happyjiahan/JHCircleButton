@@ -7,6 +7,7 @@
 //
 
 #import "JHCircleButton.h"
+#import <UIColor+Colours.h>
 
 @implementation JHCircleButton
 
@@ -29,11 +30,11 @@
 - (void)drawRect:(CGRect)rect
 {
     if (self.highlighted) {
-        _fillColor = [UIColor whiteColor];
-        _marginColor = [UIColor purpleColor];
+        _fillColor = [UIColor clearColor];
+        _marginColor = [UIColor honeydewColor];
     } else {
-        _fillColor = [UIColor greenColor];
-        _marginColor = [UIColor purpleColor];
+        _fillColor = [UIColor limeColor];
+        _marginColor = [UIColor honeydewColor];
     }
     
     CGRect circleRect = CGRectInset(rect, 5, 5);
@@ -45,5 +46,4 @@
     [self.fillColor setFill];
     [circlePath fill];
 }
-
 @end
